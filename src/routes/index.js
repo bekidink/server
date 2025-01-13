@@ -1,6 +1,9 @@
-import { authRoutes } from "./auth.route.js"
+import { authRoutes } from "./auth.route.js";
+import { categoryRoutes, productRoutes } from "./product.route.js";
 
-const prefix="/api"
-export const registerRoutes=async(fastify)=>{
-    fastify.register(authRoutes,{prefix:prefix})
-}
+const prefix = "/api";
+export const registerRoutes = async (fastify) => {
+  fastify.register(authRoutes, { prefix: prefix });
+    fastify.register(productRoutes, { prefix: prefix });
+  fastify.register(categoryRoutes, { prefix: prefix });
+};
